@@ -77,6 +77,5 @@ public class ChocolateDoaImpl implements ChocolateDoa{
         }
 
         return Jdbi.create(defualtJdbcUrl);
-
     }
 }
