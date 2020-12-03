@@ -1,13 +1,12 @@
 package org.chocolates;
 
-/**
- * Hello world!
- *
- */
-public class App 
+import org.chocolates.controller.ChocolateController;
+import org.chocolates.service.ChocolateService;
+
+public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        new ChocolateController(ChocolateService.getInstance());
     }
 }
