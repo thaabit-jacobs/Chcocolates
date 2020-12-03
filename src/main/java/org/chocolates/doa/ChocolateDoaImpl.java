@@ -15,13 +15,13 @@ public class ChocolateDoaImpl implements ChocolateDoa{
     private Jdbi jdbi = Jdbi.create("jdbc:postgresql://localhost:5432/chocs", "thaabit", "1234");
 
     public ChocolateDoaImpl() {
-/*        try {
-            jdbi = getJdbiDatabaseConnection("jdbc:postgresql://localhost:5432/banking, thaabit, 1234");
+        try {
+            jdbi = getJdbiDatabaseConnection("jdbc:postgresql://localhost:5432/chocs, thaabit, 1234");
         } catch (URISyntaxException e) {
             e.printStackTrace();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        }*/
+        }
         jdbi.installPlugin((JdbiPlugin) new SqlObjectPlugin());
         jdbi.registerRowMapper(new ChocolateMapper());
     }

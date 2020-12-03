@@ -1,0 +1,7 @@
+org/chocolates/App.class
+org/chocolates/mapper/ChocolateMapper.class
+org/chocolates/service/ChocolateService.class
+org/chocolates/doa/ChocolateDoa.class
+org/chocolates/controller/ChocolateController.class
+org/chocolates/doa/ChocolateDoaImpl.class
+org/chocolates/model/Chocolate.class
