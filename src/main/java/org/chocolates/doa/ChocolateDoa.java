@@ -15,6 +15,12 @@ public interface ChocolateDoa {
     @SqlQuery("select * from chocolate")
     List<Chocolate> selectAllChocolate();
 
-    @SqlUpdate("delete from chocolate where id=:id")
-    boolean deleteChocolate(@Bind("id") int id);
+    @SqlQuery("select * from chocolate where id=?")
+    Chocolate selectChocolate(int id);
+
+    @SqlUpdate("update chocolate set qty=:qty where id=:id")
+    boolean updateChocolate(@BindBean Chocolate choc);
+
+    @SqlUpdate("delete from chocolate where id=?")
+    boolean deleteChocolate(int id);
 }

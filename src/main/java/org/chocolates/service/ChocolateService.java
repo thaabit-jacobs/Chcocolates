@@ -4,6 +4,8 @@ import org.chocolates.doa.ChocolateDoa;
 import org.chocolates.doa.ChocolateDoaImpl;
 import org.chocolates.model.Chocolate;
 
+import java.util.List;
+
 public class ChocolateService {
 
     private final ChocolateDoa chocolateDoa = new ChocolateDoaImpl();
@@ -17,6 +19,18 @@ public class ChocolateService {
 
     public boolean insertChocolate(Chocolate choc){
        return  chocolateDoa.insertChocolate(choc);
+    }
+
+    public List<Chocolate> selectAllChocolate() {
+        return chocolateDoa.selectAllChocolate();
+    }
+
+    public Chocolate selectChocolate(int id) {
+        return chocolateDoa.selectChocolate(id);
+    }
+
+    public boolean updateChocolate(Chocolate choc){
+        return  chocolateDoa.updateChocolate(choc);
     }
 
     public boolean deleteChocolate(int id){

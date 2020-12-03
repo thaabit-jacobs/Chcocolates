@@ -40,6 +40,16 @@ public class ChocolateDoaImpl implements ChocolateDoa{
     }
 
     @Override
+    public Chocolate selectChocolate(int id) {
+        return jdbi.withExtension(ChocolateDoa.class, doa -> doa.selectChocolate(id));
+    }
+
+    @Override
+    public boolean updateChocolate(Chocolate choc) {
+        return jdbi.withExtension(ChocolateDoa.class, doa -> doa.updateChocolate(choc));
+    }
+
+    @Override
     public boolean deleteChocolate(int id) {
         return jdbi.withExtension(ChocolateDoa.class, doa -> doa.deleteChocolate(id));
     }

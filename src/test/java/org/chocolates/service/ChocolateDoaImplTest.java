@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ChocolateDoaImplTest {
@@ -24,4 +25,21 @@ public class ChocolateDoaImplTest {
     void shouldReturnListOfCoclates(){
         assertTrue(chocolateDoa.selectAllChocolate() instanceof List);
     }
+
+    @Test
+    void shouldReturnAChocolateForValidId(){
+        chocolateDoa.deleteChocolate(1);
+        chocolateDoa.insertChocolate(chocolateOne);
+        assertEquals(1, chocolateDoa.selectChocolate(1).getId());
+    }
+
+    @Test
+    void shouldReturnTrueAbdUpdateChoclateQty(){
+        chocolateDoa.deleteChocolate(1);
+        chocolateDoa.insertChocolate(chocolateOne);
+        chocolateOne.setQty(10);
+        chocolateDoa.updateChocolate(chocolateOne);
+        assertEquals(10, chocolateDoa.selectChocolate(1).getQty());
+    }
+
 }
