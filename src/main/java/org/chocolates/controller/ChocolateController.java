@@ -17,6 +17,13 @@ public class ChocolateController {
     }
 
     public ChocolateController(final ChocolateService chocolateService){
+
+        get("/", ((request, response) -> {
+            response.redirect("/chocs");
+
+            return  "";
+        }));
+
         get("/chocs", ((request, response) -> {
             Map<String, Object> model = new HashMap<>();
 
